@@ -163,7 +163,14 @@ export const generateDashboardMetrics = (dbId) => {
     const connectionPool = {
         active: Math.floor(Math.random() * 80) + 20,
         idle: Math.floor(Math.random() * 50) + 10,
-        max: 150,
+        max: 20000,
+    };
+
+     // Connection Pool Stats
+    const sessionsPool = {
+        active: Math.floor(Math.random() * 80) + 20,
+        idle: Math.floor(Math.random() * 50) + 10,
+        max: 15000,
     };
 
     return {
@@ -177,6 +184,7 @@ export const generateDashboardMetrics = (dbId) => {
         iops,
         blockingSessions,
         connectionPool,
+        sessionsPool
     };
 };
 

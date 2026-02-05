@@ -1064,6 +1064,11 @@
         "idle": 12,
         "max": 150
       },
+       "sessionsPool": {
+        "active": 120,
+        "idle": 12,
+        "max": 200
+      },
       "id": "db-prod-01"
     },
     {

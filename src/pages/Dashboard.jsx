@@ -140,9 +140,34 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            {/* Connection Pool Stats */}
+                            <div className='flex space-x-4'>
+                                {/* Sessions Pool Stats */}
                             <div className="glass-card px-4 py-3 md:px-6">
-                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Connection Pool</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Sessions Pool</p>
+                                <div className="flex items-center space-x-4">
+                                    <div>
+                                        <p className="text-xl md:text-2xl font-bold text-green-600 dark:text-green-400">
+                                            {metrics?.sessionsPool?.active??0}   
+                                        </p>
+                                        <p className="text-xs text-gray-600 dark:text-gray-400">Active</p>
+                                    </div>
+                                    {/* <div>
+                                        <p className="text-xl md:text-2xl font-bold text-gray-600 dark:text-gray-400">
+                                            {metrics?.sessionsPool.idle}
+                                        </p>
+                                        <p className="text-xs text-gray-600 dark:text-gray-400">Idle</p>
+                                    </div> */}
+                                    <div>
+                                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                                            / {metrics?.sessionsPool?.max??0} max
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* processes Pool Stats */}
+                            <div className="glass-card px-4 py-3 md:px-6">
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Processes Pool</p>
                                 <div className="flex items-center space-x-4">
                                     <div>
                                         <p className="text-xl md:text-2xl font-bold text-green-600 dark:text-green-400">
@@ -150,18 +175,19 @@ const Dashboard = () => {
                                         </p>
                                         <p className="text-xs text-gray-600 dark:text-gray-400">Active</p>
                                     </div>
-                                    <div>
+                                    {/* <div>
                                         <p className="text-xl md:text-2xl font-bold text-gray-600 dark:text-gray-400">
                                             {metrics?.connectionPool.idle}
                                         </p>
                                         <p className="text-xs text-gray-600 dark:text-gray-400">Idle</p>
-                                    </div>
+                                    </div> */}
                                     <div>
                                         <p className="text-xs text-gray-500 dark:text-gray-400">
                                             / {metrics?.connectionPool.max} max
                                         </p>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
 
@@ -205,14 +231,14 @@ const Dashboard = () => {
                                             dot={false}
                                             name="Host CPU %"
                                         />
-                                        <Line
+                                        {/* <Line
                                             type="monotone"
                                             dataKey="database"
                                             stroke="#10b981"
                                             strokeWidth={2}
                                             dot={false}
                                             name="DB CPU %"
-                                        />
+                                        /> */}
                                     </LineChart>
                                 </ResponsiveContainer>
                             </MetricCard>
